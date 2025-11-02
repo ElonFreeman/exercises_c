@@ -4,8 +4,9 @@ int main()
 
 {
     int y,m,d;
-    int M;
+    int M=0;
     int SUM;
+
 
     printf("Please input a date (yyyy mm dd):");
     scanf("%d%d%d",&y,&m,&d);
@@ -21,18 +22,19 @@ int main()
         {
             switch(m)
             {
-                case 1:M=0;break;
-                case 2:M=31;break;
-                case 3:M=31+28;break;
-                case 4:M=31+28+31;break;
-                case 5:M=31+28+31+30;break;
-                case 6:M=31+28+31+30+31;break;
-                case 7:M=31+28+31+30+31+30;break;
-                case 8:M=31+28+31+30+31+30+31;break;
-                case 9:M=31+28+31+30+31+30+31+31;break;
-                case 10:M=31+28+31+30+31+30+31+31+30;break;
-                case 11:M=31+28+31+30+31+30+31+31+30+31;break;
-                case 12:M=31+28+31+30+31+30+31+31+30+31+30;break;
+              case 12:M+=30;
+              case 11:M+=31;
+              case 10:M+=30;
+              case 9:M+=31;
+              case 8:M+=31;
+              case 7:M+=30;
+              case 6:M+=31;
+              case 5:M+=30;
+              case 4:M+=31;
+              case 3:M+=28;
+              case 2:M+=31;
+              case 1:M+=0;
+              break;
             }
         }
     
@@ -41,8 +43,7 @@ int main()
                 if(((y%4==0&&y%100!=0)||y%400==0)&&m>2)
                     printf("It is the %d day of the year!",SUM+1);
                 else
-                    printf("%d",SUM);
-        
+                    printf("%d",SUM); 
     }
 
     else 
