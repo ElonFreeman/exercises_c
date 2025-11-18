@@ -1,34 +1,40 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdbool.h>
 int main ()
 {
-    int n,r,t,s=0,s2=0;
+    int n,s0=0;
+    int s1=0;
     scanf("%d",&n);
-    
+
     while(n>0)
     {
-        r=n%10;
-        s=s+pow(r,2);
+        s0+=pow((n%10),2);
         n=n/10;
     }
-    
-    printf("%d\n",s);
+    //printf("%d\n",s0);
 
-    //while(s>10)
-    //{
-        while(s>1)
-        {
-            t=s%10;
-            s2=s2+pow(t,2);
-            s=s/10;
-        }
-    //}
-
-    printf("%d\n",s2);
-
-    /*if()
+    while (1)
     {
+        while(s0>0)
+        {
+            s1+=pow((s0%10),2);
+            s0=s0/10;
+        }
+        //printf("%d\n",s1);
 
-    }*/
-    return 0;
+        if(s1==1)
+        {
+            printf("bingo!");
+            return true; 
+        }
+        if(s1==4)
+        {
+            printf("!");
+            return false;
+        }
+
+        s0=s1;
+        s1=0;
+    }
 }
