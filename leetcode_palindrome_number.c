@@ -2,7 +2,8 @@
 #include <stdbool.h>
 int main()
 {
-    int x, r = 0, sum = 0, box;
+    int x, r = 0, box;
+    long long sum = 0;
     scanf("%d", &x);
     box = x;
 
