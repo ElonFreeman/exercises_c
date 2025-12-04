@@ -1,6 +1,9 @@
 #include <stdio.h>
+
+
 int main()
 {
-    int *pointer,numz;
+    char str,val,nums[]={};
+    
     return 0;
 }
